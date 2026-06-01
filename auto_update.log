@@ -1,0 +1,62 @@
+﻿=== Run started 2026-05-21 11:56 ===
+**Run complete ΓÇö 2026-05-21 ΓÇö NO UPDATE NEEDED**
+
+---
+
+**Findings summary:**
+
+| Check | Result |
+|---|---|
+| Recorded total (CR7_Goals_Data.md / index.html) | **971 goals** |
+| Latest confirmed total (roadto1000goals.com, ESPN, messivsronaldo.app) | **971 goals** |
+| Last goal recorded | #971 ΓÇö 7 May 2026 vs Al-Shabab FC (75', Left Foot) Γ£à already recorded |
+| 13 May: Al Nassr 1-1 Al Hilal | Bento OG ΓÇö no Ronaldo goal |
+| 16 May: Al Nassr 0-1 Gamba Osaka (AFC CL2 final) | No Ronaldo goal |
+| 21 May: Al Nassr vs Damac (today's title decider) | Result not yet available |
+
+No changes were made to `CR7_Goals_Data.md` or `index.html` ΓÇö all numbers are current and accurate. The `auto_update.log` file was held by the host process (exclusive lock), so the no-update entry was written to `auto_update_result.txt` instead.
+=== Run finished 2026-05-21 12:02 ===
+=== Run started 2026-05-22 15:29 ===
+All updates are complete. Here is a full summary of what was done:
+
+---
+
+**2 new goals found and recorded ΓÇö total now 973**
+
+| # | Date | Opponent | Minute | Type | Competition |
+|---|---|---|---|---|---|
+| 972 | 21 May 2026 | Damac FC | 63' | Free Kick | Saudi Pro League |
+| 973 | 21 May 2026 | Damac FC | 81' | Right Foot | Saudi Pro League |
+
+Al Nassr won the 2025/26 Saudi Pro League title 4-1 on the final matchday. Goal #972 was Ronaldo's 65th career free-kick goal.
+
+**`CR7_Goals_Data.md` changes:**
+- Header: 971 ΓåÆ 973, dated 22 May 2026
+- Career Overview: total 971ΓåÆ973, club goals 828ΓåÆ830, last goal updated, goals-to-1000 29ΓåÆ27
+- Goals by Club: Al Nassr 127ΓåÆ129 goals, 147ΓåÆ148 apps
+- Goals by Competition: Saudi Pro League 100ΓåÆ102
+- Goals by Season: 2025/26 row 26ΓåÆ28 goals, 30ΓåÆ31 apps (season complete)
+- Detailed tracker: rows #972 and #973 added
+- Al Nassr competition breakdown: SPL 100ΓåÆ102 goals, 106ΓåÆ107 apps; Total 127ΓåÆ129 goals, 147ΓåÆ148 apps
+- Goals by Type: Right Foot 84ΓåÆ85, Free Kick 5ΓåÆ6 (both SPL and All Comps)
+- Milestones: #971 note updated; #973 row added
+- Goals-Still-Needed table: 971ΓåÆ973, 29ΓåÆ27, 97.1%ΓåÆ97.3%
+
+**`index.html` changes:**
+- Hero, stats-bar and goals-tracker counters: 971 ΓåÆ 973
+- Progress bar: 97.1% ΓåÆ 97.3%, label 971/1,000 ΓåÆ 973/1,000
+- "29 goals" text ΓåÆ "27 goals"
+- Al Nassr stat cards: goals 127ΓåÆ129, apps 147ΓåÆ148
+- Bar chart: Al Nassr 127ΓåÆ129, pct 28.2ΓåÆ28.7
+- Latest Goals panel: #972 and #973 added at top
+- Milestone panel: #971 entry replaced with #973
+- Honours card: 971 ΓåÆ 973
+- Al Nassr highlights: latest goal note updated to #973
+- Footer date: 18 May ΓåÆ 22 May 2026
+=== Run finished 2026-05-22 15:42 ===
+=== Run started 2026-05-25 13:09 ===
+You've hit your limit ┬╖ resets 3:50pm (Africa/Cairo)
+=== Run finished 2026-05-25 13:09 ===
+=== Run started 2026-05-30 14:43 ===
+=== Run started 2026-05-31 23:57 ===
+=== Run started 2026-06-01 09:01 ===
