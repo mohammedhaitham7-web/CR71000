@@ -1316,3 +1316,147 @@ ul { list-style: none; }
   .stat-block:nth-child(odd) { border-right: none; }
   .stat-block + .stat-block { border-top: 1px solid var(--color-border); padding-top: 1.25rem; }
 }
+
+/* ============================================================
+   MEMBERS ZONE + AUTH  (Supabase login)
+   ============================================================ */
+.members-section { text-align: center; }
+
+.member-gate { max-width: 460px; margin: 0 auto; }
+
+.auth-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 2rem 1.75rem;
+  margin-top: 1.75rem;
+  text-align: left;
+}
+
+.auth-field { margin-bottom: 1.1rem; }
+
+.auth-label {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+.auth-input::placeholder { color: #666; }
+.auth-input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(200,155,60,0.18);
+}
+
+.auth-actions { display: flex; gap: 0.75rem; margin-top: 0.25rem; }
+
+.auth-btn {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+.auth-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.auth-btn.primary {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  color: #1A1A1A;
+}
+.auth-btn.primary:hover:not(:disabled) { filter: brightness(1.08); transform: translateY(-1px); }
+
+.auth-btn.ghost {
+  background: transparent;
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+.auth-btn.ghost:hover:not(:disabled) { background: rgba(200,155,60,0.12); }
+
+.auth-msg {
+  min-height: 1.2em;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+.auth-msg.ok  { color: #4ade80; }
+.auth-msg.err { color: #f87171; }
+
+/* --- Unlocked members area --- */
+.member-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin: 1.75rem 0 2.5rem;
+  font-size: 1.15rem;
+}
+.member-welcome .mw-text strong { color: var(--color-gold); }
+.member-welcome .mw-bolt { color: var(--color-gold-light); }
+
+.member-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+.member-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-gold);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  transition: var(--transition);
+}
+.member-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+.member-card .mc-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+.member-card h3 { font-size: 1.5rem; color: var(--color-text-primary); margin-bottom: 0.5rem; }
+.member-card p { color: var(--color-text-secondary); font-size: 0.95rem; }
+
+/* --- "Launching soon" placeholder (shown until Supabase is connected) --- */
+.member-soon {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-gold);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 2.5rem 2rem;
+  margin-top: 1.75rem;
+  text-align: center;
+}
+.member-soon .ms-lock { font-size: 2.5rem; margin-bottom: 0.6rem; }
+.member-soon .ms-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  color: var(--color-gold);
+  margin-bottom: 0.6rem;
+}
+.member-soon .section-sub { margin: 0 auto; }
+
+@media (max-width: 600px) {
+  .auth-actions { flex-direction: column; }
+}

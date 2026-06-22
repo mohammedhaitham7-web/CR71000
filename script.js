@@ -30,7 +30,7 @@
   });
 
   /* ---------- Active nav link on scroll ---------- */
-  const sections = ['home', 'timeline', 'portugal', 'goals', 'assists', 'honours', 'gallery']
+  const sections = ['home', 'timeline', 'portugal', 'goals', 'assists', 'honours', 'gallery', 'members']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
   const linkFor = {};

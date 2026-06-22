@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cristiano Ronaldo — The Journey to 1,000</title>
   <meta name="description" content="A tribute to the career of Cristiano Ronaldo — every club, every goal, the road to 1,000.">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=17">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' fill='%23C89B3C'>7</text></svg>">
 </head>
 <body>
@@ -22,6 +22,7 @@
         <li><a href="#assists">Assists</a></li>
         <li><a href="#honours">Honours</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#members">Members</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -684,6 +685,73 @@
     </div>
   </section>
 
+  <!-- ===================== MEMBERS ZONE ===================== -->
+  <section class="club-section members-section" id="members">
+    <div class="container">
+      <span class="section-label reveal" style="color:var(--color-gold)">CR7 Inner Circle</span>
+      <h2 class="section-heading reveal">Members <span>Zone</span></h2>
+
+      <!-- LOCKED — shown when signed out -->
+      <div class="member-gate reveal" id="memberGate">
+
+        <!-- Real login form — revealed automatically once Supabase keys are added -->
+        <div class="auth-wrap" id="authWrap" hidden>
+          <p class="section-sub">Sign in to unlock exclusive content — the full goal breakdown,
+             untold records, and a members-only highlight reel.</p>
+          <div class="auth-card">
+            <div class="auth-field">
+              <label class="auth-label" for="authEmail">Email</label>
+              <input class="auth-input" id="authEmail" type="email" placeholder="you@email.com" autocomplete="email">
+            </div>
+            <div class="auth-field">
+              <label class="auth-label" for="authPass">Password</label>
+              <input class="auth-input" id="authPass" type="password" placeholder="At least 6 characters" autocomplete="current-password">
+            </div>
+            <div class="auth-actions">
+              <button class="auth-btn primary" id="btnLogin" type="button">Log In</button>
+              <button class="auth-btn ghost" id="btnSignup" type="button">Create Account</button>
+            </div>
+            <p class="auth-msg" id="authMsg" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- Friendly placeholder — shown until Supabase is connected -->
+        <div class="member-soon" id="memberSoon" hidden>
+          <div class="ms-lock">🔒</div>
+          <h3 class="ms-title">Launching Soon</h3>
+          <p class="section-sub">An exclusive members area is on the way — the full goal breakdown,
+             untold records, and a members-only highlight reel. Check back shortly.</p>
+        </div>
+
+      </div>
+
+      <!-- UNLOCKED — shown when signed in -->
+      <div class="member-unlocked" id="memberUnlocked" hidden>
+        <div class="member-welcome">
+          <span class="mw-text">Welcome in, <strong id="memberEmail">member</strong> <span class="mw-bolt">⚡</span></span>
+          <button class="auth-btn ghost" id="btnLogout" type="button">Log Out</button>
+        </div>
+        <div class="member-cards">
+          <article class="member-card">
+            <div class="mc-icon">🔥</div>
+            <h3>The 973 Breakdown</h3>
+            <p>Every goal, club by club — the full split behind the all-time tally.</p>
+          </article>
+          <article class="member-card">
+            <div class="mc-icon">🏆</div>
+            <h3>Untold Records</h3>
+            <p>The records that never make the headlines but cement the GOAT status.</p>
+          </article>
+          <article class="member-card">
+            <div class="mc-icon">🎬</div>
+            <h3>Members-Only Reel</h3>
+            <p>A hand-picked highlight set, just for the inner circle.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== GALLERY ===================== -->
   <section class="club-section gallery-section" id="gallery">
     <div class="container">
@@ -717,6 +785,7 @@
         <a href="#assists">Assists</a>
         <a href="#honours">Honours</a>
         <a href="#gallery">Gallery</a>
+        <a href="#members">Members</a>
       </div>
       <p class="footer-fine">
         A non-commercial fan tribute to the career of Cristiano Ronaldo.
@@ -727,6 +796,9 @@
     </div>
   </footer>
 
-  <script src="script.js?v=15"></script>
+  <!-- Supabase client library (powers the Members login) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js?v=16"></script>
+  <script src="auth.js?v=2"></script>
 </body>
 </html>
