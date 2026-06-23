@@ -24,4 +24,16 @@ try {
     "ERROR: $_" | Out-File -FilePath $log -Append -Encoding utf8
 }
 
+# --- Deploy any stat changes to GitHub so Railway auto-redeploys the LIVE site ---
+# (Without this, the updater only edited local files and the live site never changed.)
+git add index.html CR7_Goals_Data.md 2>&1 | Out-File -FilePath $log -Append -Encoding utf8
+git diff --cached --quiet
+if ($LASTEXITCODE -ne 0) {
+    git commit -m "Auto-update CR7 stats $(Get-Date -Format 'yyyy-MM-dd HH:mm')" 2>&1 | Out-File -FilePath $log -Append -Encoding utf8
+    git push origin main 2>&1 | Out-File -FilePath $log -Append -Encoding utf8
+    "DEPLOYED: pushed stat changes to GitHub -> Railway." | Out-File -FilePath $log -Append -Encoding utf8
+} else {
+    "No stat changes this run; nothing to deploy." | Out-File -FilePath $log -Append -Encoding utf8
+}
+
 "=== Run finished $(Get-Date -Format 'yyyy-MM-dd HH:mm') ===" | Out-File -FilePath $log -Append -Encoding utf8

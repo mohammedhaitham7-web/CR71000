@@ -1,5 +1,5 @@
 # Cristiano Ronaldo — Complete Career Goals Data
-> **Last Updated:** May 22, 2026 | **Total Goals: 973** | **Still Active — Updated as goals are scored**
+> **Last Updated:** June 23, 2026 | **Total Goals: 975** | **Still Active — Updated as goals are scored**
 > **Sources:** roadto1000goals.com · messivsronaldo.app · Wikipedia · HuggingFace Dataset (azminetoushikwasi/cristiano-ronaldo-all-club-goals-stats)
 
 ---
@@ -8,11 +8,11 @@
 
 | Category | Total |
 |---|---|
-| **Total Career Goals** | **973** |
+| **Total Career Goals** | **975** |
 | Club Goals | 830 |
-| International Goals (Portugal) | 143 |
-| Last Goal | May 21, 2026 vs Damac FC (81', Right Foot) |
-| Goals to 1,000 | 27 |
+| International Goals (Portugal) | 145 |
+| Last Goal | June 23, 2026 vs Uzbekistan (39', Right Foot) |
+| Goals to 1,000 | 25 |
 
 ---
 
@@ -26,7 +26,7 @@
 | Juventus | 2018–2021 | 101 | 134 | Serie A, Coppa Italia, UCL |
 | Manchester United (2nd) | 2021–2022 | 24 | 54 | Premier League, UCL, FA Cup |
 | Al Nassr | 2023–present | 129 | 148 | Saudi Pro League, AFC CL, King Cup, Super Cup |
-| **Portugal (International)** | **2003–present** | **143** | **214** | **World Cup, Euros, Nations League, Qualifiers** |
+| **Portugal (International)** | **2003–present** | **145** | **215** | **World Cup, Euros, Nations League, Qualifiers** |
 
 ---
 
@@ -52,7 +52,7 @@
 | Saudi Super Cup | 3 |
 | Arab Club Champions Cup | 6 |
 | AFC Champions League 2 | 1 |
-| Portugal Internationals | 143 |
+| Portugal Internationals | 145 |
 
 ---
 
@@ -88,7 +88,7 @@
 
 ---
 
-## 🇵🇹 Portugal International Goals — All 143
+## 🇵🇹 Portugal International Goals — All 145
 
 | # | Date | Opponent | Competition | Min | Type | Result |
 |---|---|---|---|---|---|---|
@@ -235,6 +235,8 @@
 | 141 | 9 Sep 2025 | Hungary | UEFA Nations League SF | 58' | Penalty | W |
 | 142 | 14 Oct 2025 | Hungary | UEFA Nations League | 22' | Left Foot | W |
 | 143 | 14 Oct 2025 | Hungary | UEFA Nations League | 45+3' | Right Foot | W |
+| 144 | 23 Jun 2026 | Uzbekistan | 2026 WC Group K | 6' | Right Foot | 5–0 W |
+| 145 | 23 Jun 2026 | Uzbekistan | 2026 WC Group K | 39' | Right Foot | 5–0 W |
 
 ---
 
@@ -365,6 +367,7 @@
 | 900 | 22 Aug 2024 | Al-Raed SFC | Al Nassr | Saudi Pro League | 900th goal — header |
 | 971 | 7 May 2026 | Al-Shabab FC | Al Nassr | Saudi Pro League | Left-foot goal vs Al-Shabab |
 | 973 | 21 May 2026 | Damac FC | Al Nassr | Saudi Pro League | Brace (FK 63' + RF 81') — clinched SPL title |
+| 975 | 23 Jun 2026 | Uzbekistan | Portugal | 2026 World Cup | Brace (6' RF + 39' RF) — 1st to score at 6 World Cups |
 
 ---
 
@@ -372,7 +375,7 @@
 
 | Goals Scored | Goals to 1,000 | % to Target |
 |---|---|---|
-| 973 | **27** | **97.3%** |
+| 975 | **25** | **97.5%** |
 
 ---
 
