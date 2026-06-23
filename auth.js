@@ -116,7 +116,10 @@
     const { data, error } = await sb.auth.signUp({
       email: email,
       password: pass,
-      options: { data: { full_name: name } }   // name is saved to the user's account
+      options: {
+        data: { full_name: name },               // name saved to the user's account
+        emailRedirectTo: window.location.origin  // confirm link returns to THIS site
+      }
     });
     if (error) return setMsg(error.message, 'err');
     if (data.session) setMsg('Welcome, ' + name + '! You are in.', 'ok');             // email confirmation OFF
