@@ -1457,6 +1457,45 @@ ul { list-style: none; }
 }
 .member-soon .section-sub { margin: 0 auto; }
 
+/* --- Sign in / Sign up tabs + forms --- */
+.auth-tabs {
+  display: flex;
+  margin-top: 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.auth-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: var(--transition);
+}
+.auth-tab:hover { color: var(--color-text-primary); }
+.auth-tab.active { color: var(--color-gold); border-bottom-color: var(--color-gold); }
+
+.auth-wrap .auth-card {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.auth-form[hidden] { display: none; }
+.auth-intro {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.auth-form .auth-btn { width: 100%; margin-top: 0.25rem; }
+
 @media (max-width: 600px) {
   .auth-actions { flex-direction: column; }
 }

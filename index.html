@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cristiano Ronaldo — The Journey to 1,000</title>
   <meta name="description" content="A tribute to the career of Cristiano Ronaldo — every club, every goal, the road to 1,000.">
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="stylesheet" href="styles.css?v=18">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' fill='%23C89B3C'>7</text></svg>">
 </head>
 <body>
@@ -694,23 +694,43 @@
       <!-- LOCKED — shown when signed out -->
       <div class="member-gate reveal" id="memberGate">
 
-        <!-- Real login form — revealed automatically once Supabase keys are added -->
+        <!-- Sign in / Sign up — revealed once Supabase keys are configured -->
         <div class="auth-wrap" id="authWrap" hidden>
-          <p class="section-sub">Sign in to unlock exclusive content — the full goal breakdown,
-             untold records, and a members-only highlight reel.</p>
+          <div class="auth-tabs">
+            <button class="auth-tab active" id="tabSignin" type="button">Sign In</button>
+            <button class="auth-tab" id="tabSignup" type="button">Sign Up</button>
+          </div>
           <div class="auth-card">
-            <div class="auth-field">
-              <label class="auth-label" for="authEmail">Email</label>
-              <input class="auth-input" id="authEmail" type="email" placeholder="you@email.com" autocomplete="email">
-            </div>
-            <div class="auth-field">
-              <label class="auth-label" for="authPass">Password</label>
-              <input class="auth-input" id="authPass" type="password" placeholder="At least 6 characters" autocomplete="current-password">
-            </div>
-            <div class="auth-actions">
-              <button class="auth-btn primary" id="btnLogin" type="button">Log In</button>
-              <button class="auth-btn ghost" id="btnSignup" type="button">Create Account</button>
-            </div>
+            <!-- SIGN IN -->
+            <form class="auth-form" id="formSignin">
+              <p class="auth-intro">Welcome back — sign in to unlock the members area.</p>
+              <div class="auth-field">
+                <label class="auth-label" for="siEmail">Email</label>
+                <input class="auth-input" id="siEmail" type="email" placeholder="you@email.com" autocomplete="email">
+              </div>
+              <div class="auth-field">
+                <label class="auth-label" for="siPass">Password</label>
+                <input class="auth-input" id="siPass" type="password" placeholder="Your password" autocomplete="current-password">
+              </div>
+              <button class="auth-btn primary" id="btnSignin" type="submit">Sign In</button>
+            </form>
+            <!-- SIGN UP -->
+            <form class="auth-form" id="formSignup" hidden>
+              <p class="auth-intro">Create your account to join the inner circle.</p>
+              <div class="auth-field">
+                <label class="auth-label" for="suName">Full Name</label>
+                <input class="auth-input" id="suName" type="text" placeholder="Cristiano Ronaldo" autocomplete="name">
+              </div>
+              <div class="auth-field">
+                <label class="auth-label" for="suEmail">Email</label>
+                <input class="auth-input" id="suEmail" type="email" placeholder="you@email.com" autocomplete="email">
+              </div>
+              <div class="auth-field">
+                <label class="auth-label" for="suPass">Password</label>
+                <input class="auth-input" id="suPass" type="password" placeholder="At least 6 characters" autocomplete="new-password">
+              </div>
+              <button class="auth-btn primary" id="btnSignup" type="submit">Create Account</button>
+            </form>
             <p class="auth-msg" id="authMsg" role="status" aria-live="polite"></p>
           </div>
         </div>
@@ -728,7 +748,7 @@
       <!-- UNLOCKED — shown when signed in -->
       <div class="member-unlocked" id="memberUnlocked" hidden>
         <div class="member-welcome">
-          <span class="mw-text">Welcome in, <strong id="memberEmail">member</strong> <span class="mw-bolt">⚡</span></span>
+          <span class="mw-text">Welcome in, <strong id="memberName">member</strong> <span class="mw-bolt">⚡</span></span>
           <button class="auth-btn ghost" id="btnLogout" type="button">Log Out</button>
         </div>
         <div class="member-cards">
@@ -799,6 +819,6 @@
   <!-- Supabase client library (powers the Members login) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js?v=16"></script>
-  <script src="auth.js?v=3"></script>
+  <script src="auth.js?v=4"></script>
 </body>
 </html>
