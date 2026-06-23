@@ -145,7 +145,7 @@
   };
 
   if (galleryGrid) {
-    fetch('photos/gallery/manifest.json')
+    fetch('photos/gallery/manifest.json?v=2')
       .then((r) => r.json())
       .then((photos) => {
         photos.forEach((p) => {
