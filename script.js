@@ -136,10 +136,28 @@
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxCounter = document.getElementById('lightboxCounter');
   const galleryGrid = document.getElementById('galleryGrid');
 
-  const openLightbox = (src) => {
-    lightboxImg.src = src;
+  let gallerySrcs = [];   // every photo src, in gallery order
+  let currentIndex = 0;
+
+  const showAt = (index) => {
+    if (!gallerySrcs.length) return;
+    currentIndex = (index + gallerySrcs.length) % gallerySrcs.length; // wraps past either end
+    lightboxImg.src = gallerySrcs[currentIndex];
+    if (lightboxCounter) lightboxCounter.textContent = (currentIndex + 1) + ' / ' + gallerySrcs.length;
+    // preload the neighbours so next/prev feels instant
+    [currentIndex + 1, currentIndex - 1].forEach((n) => {
+      const pre = new Image();
+      pre.src = gallerySrcs[(n + gallerySrcs.length) % gallerySrcs.length];
+    });
+  };
+
+  const openLightbox = (index) => {
+    showAt(index);
     lightbox.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
   };
@@ -148,7 +166,8 @@
     fetch('photos/gallery/manifest.json?v=2')
       .then((r) => r.json())
       .then((photos) => {
-        photos.forEach((p) => {
+        gallerySrcs = photos.map((p) => p.src);
+        photos.forEach((p, i) => {
           const item = document.createElement('div');
           item.className = 'gallery-item';
 
@@ -158,7 +177,7 @@
           img.loading = 'lazy';
           item.appendChild(img);
 
-          item.addEventListener('click', () => openLightbox(p.src));
+          item.addEventListener('click', () => openLightbox(i));
           galleryGrid.appendChild(item);
         });
         const countEl = document.querySelector('.gallery-count');
@@ -176,11 +195,18 @@
     document.body.style.overflow = '';
   };
 
+  const step = (delta) => showAt(currentIndex + delta);
+
   lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+  if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); step(1); });
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lightbox.hasAttribute('hidden')) closeLightbox();
+    if (lightbox.hasAttribute('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
   });
 })();
