@@ -801,6 +801,10 @@ ul { list-style: none; }
   box-shadow: 0 22px 55px rgba(0,0,0,0.7);
   z-index: 1;
 }
+.goals-side-photo.right {
+  left: auto;
+  right: calc(50% - 515px);
+}
 @media (min-width: 1150px) {
   .goals-side-photo { display: block; }
 }
