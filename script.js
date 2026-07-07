@@ -163,7 +163,7 @@
   };
 
   if (galleryGrid) {
-    fetch('photos/gallery/manifest.json?v=4')
+    fetch('photos/gallery/manifest.json?v=5')
       .then((r) => r.json())
       .then((photos) => {
         gallerySrcs = photos.map((p) => p.src);
@@ -172,7 +172,7 @@
           item.className = 'gallery-item';
 
           const img = document.createElement('img');
-          img.src = p.src;
+          img.src = p.thumb || p.src; // small thumb in the grid; full res stays in the lightbox
           img.alt = 'Cristiano Ronaldo';
           img.loading = 'lazy';
           item.appendChild(img);
