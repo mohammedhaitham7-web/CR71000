@@ -1134,11 +1134,9 @@ ul { list-style: none; }
   margin-top: 0.5rem;
 }
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  grid-auto-rows: 230px;
-  grid-auto-flow: dense;
-  gap: 0.9rem;
+  /* Masonry: every photo keeps its natural aspect ratio — no cropping */
+  columns: 4 230px;
+  column-gap: 0.9rem;
   margin-top: 2.5rem;
 }
 .gallery-item {
@@ -1149,10 +1147,12 @@ ul { list-style: none; }
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  break-inside: avoid;
+  margin-bottom: 0.9rem;
 }
 .gallery-item img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+  width: 100%; height: auto;
+  display: block;
   transition: transform 0.6s ease;
 }
 .gallery-item:hover img { transform: scale(1.08); }
@@ -1188,8 +1188,6 @@ ul { list-style: none; }
   font-size: 1.35rem;
   color: #fff;
 }
-.gallery-item.wide { grid-column: span 2; }
-.gallery-item.tall { grid-row: span 2; }
 
 /* Lightbox */
 .lightbox {
@@ -1318,7 +1316,7 @@ ul { list-style: none; }
   .club-grid { grid-template-columns: 1fr; gap: 2.25rem; }
   .club-photo-wrap { order: -1; max-height: 460px; }
   .goals-extra { grid-template-columns: 1fr; }
-  .gallery-grid { grid-auto-rows: 200px; }
+  .gallery-grid { columns: 3 200px; }
   .hero-photo { width: 78%; opacity: 0.5; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
   .stat-block + .stat-block { border-left: none; }
@@ -1355,8 +1353,8 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-item.wide { grid-column: span 1; }
+  .gallery-grid { columns: 2 140px; column-gap: 0.6rem; }
+  .gallery-item { margin-bottom: 0.6rem; }
   .stats-grid { grid-template-columns: 1fr; }
   .stat-block:nth-child(odd) { border-right: none; }
   .stat-block + .stat-block { border-top: 1px solid var(--color-border); padding-top: 1.25rem; }
