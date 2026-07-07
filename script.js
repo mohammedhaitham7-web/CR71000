@@ -163,7 +163,7 @@
   };
 
   if (galleryGrid) {
-    fetch('photos/gallery/manifest.json?v=3')
+    fetch('photos/gallery/manifest.json?v=4')
       .then((r) => r.json())
       .then((photos) => {
         gallerySrcs = photos.map((p) => p.src);
